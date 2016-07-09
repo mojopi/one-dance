@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+    #dog1 {
+        width: 300px;
+        height: 400px;
+        background-image: url(dog1.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation-name: jump;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        position: absolute;
+        left: 300px;
+        animation-timing-function: linear;
+    }
+    
+    @keyframes jump {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(100px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+    
+    #dog2 {
+        width: 300px;
+        height: 400px;
+        background-image: url(dog2.png);
+        background-size: cover;
+    }
+    
+    #dog3 {
+        width: 400px;
+        height: 400px;
+        background-image: url(dog3.png);
+        background-size: cover;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top:0px;
+        left:500px;
+        animation-name:color;
+        animation-iteration-count: infinite;
+        animation-duration: 1s;
+    }
+
+    @keyframes color{
+    	0% {-webkit-filter:hue-rotate(50deg);}
+    	10% {-webkit-filter:hue-rotate(100deg);}
+    	20% {-webkit-filter:hue-rotate(150deg);}
+    	30% {-webkit-filter:hue-rotate(200deg);}
+    	40% {-webkit-filter:hue-rotate(250deg);}
+    	50% {-webkit-filter:hue-rotate(300deg);}
+    	60% {-webkit-filter:hue-rotate(350deg)}
+    	70% {-webkit-filter:hue-rotate(400deg)}
+    	80% {-webkit-filter:hue-rotate(450deg)}
+    	90% {-webkit-filter:hue-rotate(500deg)}
+    	100% {-webkit-filter:hue-rotate(600deg)}
+    }
+    
+    body {
+        background-color: lightblue;
+    }
+    </style>
+</head>
+
+<body>
+<audio src="oneDance.mp3" autoplay></audio>
+    <div id="dog1"></div>
+    <div id="dog2"></div>
+    <div id="dog3"></div>
+    <audio id="kiss" src="kiss.mp3"></audio>
+    <script>
+    //url where I got kiss from: https://www.freesoundeffects.com/free-track/smoochy-kiss-428522/ //
+
+    var kiss = document.getElementById("kiss");
+    var dog2 = document.getElementById("dog2");
+
+    dog2.addEventListener("click", function() {
+        kiss.play()
+    });
+
+
+    </script>
+</body>
+
+</html>
